@@ -306,9 +306,20 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
       gap: 16px;
+    }
+    @media (min-width: 640px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-item.tall {
+        grid-row: span 2;
+        aspect-ratio: unset !important;
+      }
+      .gallery-item.wide {
+        grid-column: span 2;
+      }
     }
     .gallery-item {
       border-radius: 22px;
@@ -319,10 +330,6 @@
       transition: transform .35s ease, box-shadow .35s ease;
     }
     .gallery-item:hover { transform: scale(1.03); box-shadow: 0 18px 48px rgba(176,80,140,.3); }
-    .gallery-item.tall {
-      grid-row: span 2;
-      aspect-ratio: unset;
-    }
     .gallery-item img {
       width: 100%; height: 100%;
       object-fit: cover;
@@ -347,6 +354,23 @@
       font-size: .9rem;
       letter-spacing: .05em;
     }
+
+    /* ── DEVELOPER CREDIT ── */
+    .dev-credit {
+      text-align: center;
+      padding: 0 24px 16px;
+      font-size: .78rem;
+      color: var(--text-mid);
+      opacity: .75;
+      font-weight: 500;
+      letter-spacing: .04em;
+    }
+    .dev-credit a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .dev-credit a:hover { text-decoration: underline; }
 
     /* ── BANKING ── */
     .banking-section {
@@ -419,9 +443,8 @@
     }
 
     @media (max-width: 600px) {
-      .gallery { grid-template-columns: 1fr; }
-      .gallery-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
       .add-grid { grid-template-columns: 1fr; }
+      .logo { height: clamp(70px, 18vw, 110px); left: 12px; }
     }
   </style>
 </head>
@@ -544,7 +567,7 @@
         <img src="images/bottom_right_image.jpeg" alt="Slumber party setup" loading="lazy" />
         <div class="overlay"><span class="overlay-text">Slumber Party Vibes 🎀</span></div>
       </div>
-      <div class="gallery-item" style="grid-column: span 2;">
+      <div class="gallery-item wide">
         <img src="images/bottom_left_image.jpeg" alt="Birthday pool setup" loading="lazy" />
         <div class="overlay"><span class="overlay-text">Birthday Surprise Setup 🌸</span></div>
       </div>
@@ -567,6 +590,9 @@
       </div>
     </div>
   </div>
+
+  <!-- ── DEVELOPER CREDIT ── -->
+  <p class="dev-credit">Website developed by <a href="#">Andreasbusinesswebsite</a></p>
 
   <!-- ── FOOTER ── -->
   <footer>
