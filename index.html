@@ -372,6 +372,45 @@
     }
     .dev-credit a:hover { text-decoration: underline; }
 
+    /* ── WHATSAPP BUTTON ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      text-decoration: none;
+      padding: 14px 22px 14px 16px;
+      border-radius: 999px;
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      transition: transform .25s ease, box-shadow .25s ease;
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 12px 32px rgba(37,211,102,.55);
+      animation: none;
+    }
+    .whatsapp-float svg {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); }
+      50%      { box-shadow: 0 6px 32px rgba(37,211,102,.75), 0 0 0 8px rgba(37,211,102,.12); }
+    }
+    @media (max-width: 480px) {
+      .whatsapp-float { bottom: 18px; right: 18px; padding: 13px 18px 13px 14px; font-size: .82rem; }
+    }
+
     /* ── BANKING ── */
     .banking-section {
       max-width: 500px;
@@ -592,7 +631,7 @@
   </div>
 
   <!-- ── DEVELOPER CREDIT ── -->
-  <p class="dev-credit">Website developed by <a href="https://www.andreaswebstudio.co.za">Andreasbusinesswebsite</a></p>
+  <p class="dev-credit">Website developed by <a href="#">Andreasbusinesswebsite</a></p>
 
   <!-- ── FOOTER ── -->
   <footer>
@@ -601,6 +640,17 @@
     <div style="margin-top:6px;">JHB Based &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/27664979586">+27 66 497 9586</a></div>
     <div class="deposit-note">50% NON-REFUNDABLE DEPOSIT REQUIRED</div>
   </footer>
+  <!-- ── WHATSAPP FLOAT BUTTON ── -->
+  <a href="https://wa.me/27664979586?text=Hi%20K-Glow%20Parties!%20I%27d%20like%20to%20enquire%20about%20a%20room%20setup%20package%20%F0%9F%8E%80" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Chat with us on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#fff">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.77-1.853l-.486-.29-5.004 1.194 1.218-4.872-.318-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.987c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.199-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.62-3.203-1.977-1.184-1.056-1.983-2.36-2.216-2.758-.232-.398-.025-.613.175-.811.18-.178.398-.465.597-.698.2-.232.266-.398.398-.664.133-.266.067-.498-.033-.697-.1-.199-.897-2.162-1.23-2.96-.323-.778-.651-.673-.897-.686l-.764-.013c-.266 0-.697.1-1.063.498-.365.398-1.395 1.362-1.395 3.325s1.428 3.857 1.627 4.123c.2.266 2.81 4.29 6.808 6.017.952.411 1.694.656 2.273.84.954.304 1.823.261 2.51.158.766-.114 2.354-.962 2.687-1.89.332-.929.332-1.726.232-1.89-.099-.166-.365-.266-.763-.465z"/>
+    </svg>
+    Chat with us on WhatsApp
+  </a>
 
 </body>
 </html>
